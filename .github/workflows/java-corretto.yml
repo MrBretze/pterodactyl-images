@@ -55,8 +55,11 @@ jobs:
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
+          buildkitd-flags: --debug
           context: ./java-corretto
           platforms: linux/amd64,linux/arm64
           file: ./java-corretto/${{ matrix.tag }}/Dockerfile
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: ghcr.io/mrbretze/pterodactyl-images:java_${{ matrix.tag }}_corretto
