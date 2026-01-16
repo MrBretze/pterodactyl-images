@@ -4,10 +4,10 @@ LABEL       author="Softwarenoob" maintainer="admin@softwarenoob.com"
 LABEL       org.opencontainers.image.source="https://github.com/Software-Noob/pterodactyl-images"
 LABEL       org.opencontainers.image.licenses="MIT"
 
-RUN         yum upgrade -y \
-            && yum install -y curl ca-certificates openssl git tar sqlite fontconfig freetype libstdc++.so.6 freetype-devel lsof build-essential tzdata iproute \
+RUN         dnf update && dnf upgrade -y \
+            && dnf install -y curl ca-certificates openssl git tar sqlite fontconfig freetype libstdc++.so.6 freetype-devel lsof build-essential tzdata iproute \
             git gcc gcc-c++ automake make libtool \
-            && yum clean all \
+            && dnf clean all \
             && rm -rf /var/cache/yum \
             && useradd -m -d /home/container container
 
