@@ -6,7 +6,6 @@ LABEL org.opencontainers.image.licenses="MIT"
 
 RUN dnf update -y \
  && dnf install -y \
-      curl \
       ca-certificates \
       openssl \
       git \
