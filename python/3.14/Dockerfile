@@ -1,4 +1,4 @@
-FROM        python:3.13-rc-bullseye
+FROM        python:3.14-slim
 
 LABEL       author="Software-noob" maintainer="admin@softwarenoob.com"
 LABEL       org.opencontainers.image.source="https://github.com/Software-Noob/pterodactyl-images"
